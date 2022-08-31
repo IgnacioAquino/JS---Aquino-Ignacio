@@ -4,10 +4,12 @@
 
 let interes = 1.20
 
+
 // BIENVENIDO
 
 console.log("Bienvenido!")
 
+debugger
 
 // VERAZ
 
@@ -26,13 +28,12 @@ if (veraz == true){
     pedirDatos()
 }
 
-
-
 // DATOS
+
 function pedirDatos(){
     const monto = prompt("Ingrese aqui el monto deseado:")
     const cuotas = prompt("Ingrese la cantidad de cuotas(3,6,12):")
-    calculo(monto, interes, cuotas)
+    const resultado = calculo(monto, interes, cuotas) 
     
 }
 
@@ -41,6 +42,11 @@ function pedirDatos(){
 
 function calculo(monto, interes, cuotas){
     console.log("El valor de cada cuota seria de:", monto * interes / cuotas)
+    return
     
 }
 
+//CICLOS
+
+for (let i = 1; i <= 12; i++)
+    console.log("Cuota nro:", i)
