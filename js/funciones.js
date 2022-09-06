@@ -1,52 +1,30 @@
-// PRESTAMO PERSONAL
-
-// VARIABLES
-
-let interes = 1.20
-
-
-// BIENVENIDO
-
-console.log("Bienvenido!")
-
-debugger
-
-// VERAZ
-
-function denegado(){
-    console.log("Gracias vuelvas prontos")
-}
-
-let veraz = confirm("Usted esta en el veraz?:")
-
-if (veraz == true){
-    alert("Usted no puede recibir un prestamo.")
-    denegado()
-}
-    else{
-    console.log("Perfecto, usted puede recibir un prestamo.")
-    pedirDatos()
-}
-
-// DATOS
-
-function pedirDatos(){
-    const monto = prompt("Ingrese aqui el monto deseado:")
-    const cuotas = prompt("Ingrese la cantidad de cuotas(3,6,12):")
-    const resultado = calculo(monto, interes, cuotas) 
-    
-}
+//class Producto{
+//    constructor(id, nombre, precio){
+//        this.id = id
+//        this.nombre = nombre
+//        this.precio = precio
+//    }
+//}
 
 
-// CALCULO
+//function agregarProducto(){
+//    let id = creoID()
+//    let nombre = prompt("Ingrese el nombre del producto:")
+//    let precio = prompt("Ingrese eñ precio del producto:")
+//    const prod = {ID:id, NOMBRE:nombre, PRECIO:precio}
+//    productos.push(prod)
+//    console.table(productos)
+//}
 
-function calculo(monto, interes, cuotas){
-    console.log("El valor de cada cuota seria de:", monto * interes / cuotas)
-    return
-    
-}
 
-//CICLOS
+//function generadorAutomatico() {
+//    productos.push(new Producto(2345, "TECLADO", 6000))
+//    productos.push(new Producto(3456, "MONITOR", 20000))
+//    productos.push(new Producto(4567, "GABINETE", 19000))
+//    productos.push(new Producto(5678, "PLACA DE VIDEO", 60000))
+//    productos.push(new Producto(6789, "PROCESADOR", 25000))
+//
+//}
 
-for (let i = 1; i <= 12; i++)
-    console.log("Cuota nro:", i)
+//const creoID = ()=> parseInt(Math.random() * 1)
+//const objetos = {ID: 1, NOMBRE: "MOUSE", PRECIO: 5000 }
