@@ -1,4 +1,6 @@
 // PRODUCTOS
+let precio = ""
+const carrito = []
 const IVA = 1.20
 const productos = [ 
                 {nombre: "MONITOR", precio: 20000, id: 124},
@@ -9,6 +11,26 @@ const productos = [
                 {nombre: "PROCESADOR", precio: 30000, id: 321}
 ]
 
+// CARRITO
+
+class Producto{
+    constructor(id, nombre, precio){
+        this.nombre = nombre
+        this.precio = precio
+        this.id = id
+    }
+}
+
+function anadirCarrito(){
+
+    carrito.push(new Producto(2345, "TECLADO", 6000))
+    carrito.push(new Producto(3456, "MONITOR", 20000))
+    carrito.push(new Producto(2345, "MOUSE", 6000))
+    carrito.push(new Producto(4567, "GABINETE", 19000))
+    carrito.push(new Producto(5678, "PLACA DE VIDEO", 60000))
+    carrito.push(new Producto(6789, "PROCESADOR", 25000))
+
+}
 
 
 // BUSCADOR
@@ -21,26 +43,41 @@ function buscarProducto() {
 
     console.table(resultado)
 
-    if (item === "MONITOR"){
-        let precio = console.log(precio)
-    } else if (item === "MOUSE"){
-        let precio = 5000
-    } else if (item === "TECLADO"){
-        let precio = 6000
-    } else if (item === "GABINETE"){
-        let precio = 25000
-    } else if (item === "PLACA DE VIDEO"){
-        let precio = 40000
-    } else if (item === "PROCESADOR"){
-        let precio = 30000
-    } else {
-        alert("No contamos con stock de ese producto.")
+
+    switch (item){
+        case "MONITOR":
+            precio = 20000;
+            carrito.push(new Producto(3456, "MONITOR", 20000))
+            break;
+
+        case "MOUSE":
+            precio = 5000;
+            carrito.push(new Producto(2345, "MOUSE", 6000))
+            break;
+
+        case "TECLADO":
+            precio = 6000;
+            carrito.push(new Producto(2345, "TECLADO", 6000))
+            break;
+
+        case "GABINETE":
+            precio = 25000;
+            carrito.push(new Producto(4567, "GABINETE", 19000))
+            break;
+
+        case "PLACA DE VIDEO":
+            precio = 40000;
+            carrito.push(new Producto(5678, "PLACA DE VIDEO", 60000))
+            break;
+
+        case "PROCESADOR":
+            precio = 30000;
+            carrito.push(new Producto(6789, "PROCESADOR", 25000))
+            break;
+
     }
 
     compra()
-    calculo(precio, IVA, cuotas)
-    
-    
 }
 
 buscarProducto()
@@ -49,16 +86,15 @@ buscarProducto()
 // COMPRA
 
 function compra() {
-    let realizarCompra = confirm("Usted desea realizar la compra?")
+     realizarCompra = confirm("Usted desea realizar la compra?")
     if (realizarCompra == true){
+       
         const cuotas = prompt("Ingrese la cantidad de cuotas(1,3,6,12):")
-        
+        calculoCuotas(precio, IVA, cuotas)
     }
     else {
         console.log("Bueno, siga mirando tranquilo.")
     }
-
-
 }
 
 
@@ -66,9 +102,13 @@ function compra() {
 
 // CALCULO
 
-function calculo(precio, IVA, cuotas){
-    console.log("El valor de cada cuota seria de:", precio * IVA / cuotas)
+function calculoCuotas(precio, IVA, cuotas){
+    console.log("El valor de cada cuota con los intereses seria de:", precio * IVA / cuotas)
     return
     
 }
+
+
+
+
 
