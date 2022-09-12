@@ -1,4 +1,5 @@
 // PRODUCTOS
+debugger
 let precio = ""
 const carrito = []
 const IVA = 1.20
@@ -10,6 +11,8 @@ const productos = [
                 {nombre: "PLACA DE VIDEO", precio: 40000, id: 654},
                 {nombre: "PROCESADOR", precio: 30000, id: 321}
 ]
+
+
 
 // CARRITO
 
@@ -38,7 +41,7 @@ function anadirCarrito(){
 function buscarProducto() {
     
     let item = prompt("Ingrese el producto que desea:").toUpperCase()
-    debugger
+    
     let resultado = productos.filter((producto)=> producto.nombre.includes(item))
 
     console.table(resultado)
@@ -107,7 +110,6 @@ function calculoCuotas(precio, IVA, cuotas){
     return
     
 }
-
 
 
 
