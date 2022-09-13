@@ -1,5 +1,5 @@
 // PRODUCTOS
-debugger
+
 let precio = ""
 const carrito = []
 const IVA = 1.20
