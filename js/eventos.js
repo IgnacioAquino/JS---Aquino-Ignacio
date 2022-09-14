@@ -2,8 +2,13 @@
 
 const btnAgregar = document.querySelector("#btnAgregar")
 
+
 function enviar() {
     alert("Producto agregado al stock.")
+    
 }
 
-btnAgregar.addEventListener("click", () => enviar())
+btnAgregar.addEventListener("click", enviar)
+
+
+
